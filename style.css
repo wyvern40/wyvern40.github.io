@@ -40,7 +40,6 @@
    /* main container area beneath menu */
    main {
        background: rgb(66, 66, 66);
-       display: flex;
        border-radius: 5px;
    }
    .sidebar {
