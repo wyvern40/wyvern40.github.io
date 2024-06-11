@@ -6,11 +6,9 @@
 	<script src="jquery.min.js"></script>
 	<style>
 		.box {
-			width: 70px;
-			height: 70px;
+			width: 140px;
+			height: 140px;
 			background-color: teal;
-			font-size: 300%;
-			text-align: center;
 			user-select: none;
 			display: block;
 			position: absolute;
@@ -20,13 +18,22 @@
 		.board{
 			height: 100vh;
 		}
+		.score {
+			font-size: 500%;
+			width: 50%;
+			text-align: center;
+			margin: auto;
+			padding: 20px;
+		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 
 </head>
 <body class="board">
 	<!-- HTML for the box -->
-	<div class="box">?</div>
+	<div class="box" onclick="handleBoxClick()">
+		<p class = "score"></p>
+	</div>
 
 	<script>
 		(function(){
@@ -38,6 +45,7 @@
 			//////////////////////////////////////////////////////////////////
 			
 			var box = jQuery('.box');	// reference to the HTML .box element
+			var scoreText = jQuery('.score');
 			var board = jQuery('.board');	// reference to the HTML .board element
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
 			var boardHeight = board.height();
@@ -56,7 +64,7 @@
 
 			// changes the text displayed on the Box
 			function changeBoxText(newText) {
-				box.text(newText);
+				scoreText.text(newText);
 			}
 
 			//////////////////////////////////////////////////////////////////
@@ -112,6 +120,7 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
+				console.log("a")
 				randomX = Math.random() * boardWidth;
 				randomY = Math.random() * boardHeight;
 				positionX = randomX
