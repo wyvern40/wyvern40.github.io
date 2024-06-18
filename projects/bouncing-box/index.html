@@ -31,7 +31,7 @@
 </head>
 <body class="board">
 	<!-- HTML for the box -->
-	<div class="box" onclick="handleBoxClick()">
+	<div class="box">
 		<p class = "score"></p>
 	</div>
 
@@ -98,6 +98,8 @@
 			turn it around! 
 			*/
 			function update() {
+				boardHeight = board.height();
+				boardWidth = board.width();
 				positionX += xSpeed;
 				positionY += ySpeed;
 				moveBoxTo(positionX, positionY);
